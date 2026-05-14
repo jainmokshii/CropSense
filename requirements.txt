@@ -1,0 +1,9 @@
+tensorflow==2.13.0
+numpy
+pandas
+matplotlib
+scikit-learn
+streamlit
+pillow
+opencv-python-headless
+kaggle
