@@ -2,4 +2,3 @@ venv/
 plantvillage-dataset.zip 
 "plantvillage dataset/" 
 __pycache__/ 
-*.h5 
