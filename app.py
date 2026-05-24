@@ -595,11 +595,13 @@ section[data-testid="stSidebar"] hr {
 @st.cache_resource(show_spinner=False)
 def load_model():
     import tensorflow as tf
-    return tf.keras.models.load_model("cropsense_model.h5")
-
+from huggingface_hub import hf_hub_download
+model_path = hf_hub_download(repo_id="jainmokshi/CropSense", filename="cropsense_model.h5")
+return tf.keras.models.load_model(model_path)
 @st.cache_resource(show_spinner=False)
 def load_class_names():
-    return sorted(os.listdir("plantvillage dataset/color"))
+from treatment_data import TREATMENT_DATA
+return [k for k in TREATMENT_DATA.keys() if k != "default"]
 
 def preprocess(image):
     img = image.resize((224, 224))
